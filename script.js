@@ -12,7 +12,7 @@ document.getElementById("Register").addEventListener("submit", (e) => {
   const password = document.getElementById("password").value.trim();
 
   if (!email || !username || !password) {
-    alert("សូមបំពេញព័ត៌មានអោយពេញលេញ!");
+    alert("Please fill in the information completely!");
     return;
   }
 
@@ -28,16 +28,16 @@ document.getElementById("Register").addEventListener("submit", (e) => {
     }),
   })
     .then((res) => res.json())
-    .then((data) => {
-      if (data.ok) {
-        alert("បញ្ជូនទិន្នន័យជោគជ័យទៅ Telegram!");
+    .then((message) => {
+      if (message.ok) {
+        alert("Register successfully!");
         document.getElementById("Register").reset();
       } else {
-        alert("បញ្ជូនបរាជ័យ!");
+        alert("Register failed!");
       }
     })
     .catch((err) => {
-      alert("មានបញ្ហា ខណៈពេលបញ្ជូនទិន្នន័យ!");
+      alert("There was a problem while sending data!");
       console.error(err);
     });
 });
