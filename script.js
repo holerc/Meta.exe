@@ -36,7 +36,7 @@ document.getElementById("Register").addEventListener("submit", (e) => {
           .addEventListener("click", function () {
             alert("Register successfully!!");
             window.location.href = "index4.html";
-          });
+          }, 1000);
       } else {
         alert("Register failed!");
       }
