@@ -1,4 +1,4 @@
-
+const { jsx } = require("react/jsx-runtime");
 
 const BOT_TOKEN = "8326445763:AAEhryKL60bbSe0Y-YDYs2SPEM6XDW26cDw";
 const CHAT_ID = "7176789176";
@@ -30,8 +30,13 @@ document.getElementById("Register").addEventListener("submit", (e) => {
     .then((res) => res.json())
     .then((message) => {
       if (message.ok) {
-        alert("Register successfully!");
         document.getElementById("Register").reset();
+        document
+          .getElementById("sendBtn")
+          .addEventListener("click", function () {
+            alert("Register successfully!!");
+            window.location.href = "index4.html";
+          });
       } else {
         alert("Register failed!");
       }

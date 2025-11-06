@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box-search">
+            
+            <div class="text">
+                <h2>My Menu</h2>
+            </div>
+
+            <div class="main-search">
+                <div class="search">
+                    <form action="" class="form-search">
+                        <input type="text" id="search" placeholder="Search">
+                    </form>
+                </div>
+                <div class="box-icon">
+                    <i class="ri-search-line"></i>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="container-gallery">
+            <div class="gallery">
+                <img src="item1.jpg" alt="">
+                <img src="item2.jpg" alt="">
+                <img src="item3.jpg" alt="">
+            </div>
+
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="box-cart">
+            <p>Lamps</p>
+            <div class="cart">
+                <div class="cart-item">
+                    <img src="https://i.pinimg.com/1200x/6d/5b/23/6d5b230ccf2926522a43992e35c74586.jpg" alt="">
+                    <div class="star">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p>$4.99</p>
+                </div>
+                <div class="cart-item">
+                    <img src="https://i.pinimg.com/1200x/5f/ab/bd/5fabbdee0442b9d711ea2e8007f2262a.jpg" alt="">
+                    <div class="star">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p>$4.99</p>
+                </div>
+               <div class="cart-item">
+                    <img src="https://i.pinimg.com/1200x/e6/3d/fc/e63dfc47e17b1a785c828a9c04515c1f.jpg" alt="">
+                    <div class="star">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p>$4.99</p>
+                </div>
+               <div class="cart-item">
+                    <img src="https://i.pinimg.com/736x/29/94/4c/29944cc72bf9c53bfcd3d267bf40a127.jpg" alt="">
+                    <div class="star">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p>$4.99</p>
+                </div>
+                    <div class="cart-item">
+                    <img src="https://i.pinimg.com/1200x/04/51/7a/04517a084f39c82cfdc1870d08c81ea1.jpg" alt="">
+                    <div class="star">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p>$4.99</p>
+                </div>
+               <div class="cart-item">
+                    <img src="https://i.pinimg.com/736x/25/c5/bc/25c5bc0f6417bc9228d5df90417624bc.jpg" alt="">
+                    <div class="star">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p>$4.99</p>
+                </div>
+               <div class="cart-item">
+                    <img src="https://i.pinimg.com/736x/c9/b9/90/c9b9905bd8d8ea73beaca09d1300d69f.jpg" alt="">
+                    <div class="star">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                    </div>
+                    <p>$4.99</p>
+                </div>               
+            </div>
+            <div class="dotsItem">
+                <span class="dotItem actives"></span>
+                <span class="dotItem"></span>
+                <span class="dotItem"></span>
+                <span class="dotItem"></span>
+                <span class="dotItem"></span>
+                <span class="dotItem"></span>
+                <span class="dotItem"></span>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+        const gallery = document.querySelector('.gallery');
+        const dots = document.querySelectorAll('.dot');
+        const image = document.querySelectorAll('.gallery img');
+
+        gallery.addEventListener('scroll', ()=>{
+            let index = Math.round(gallery.scrollLeft / image[0].clientWidth);
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index]?.classList.add('active');
+        });
+
+
+        const cart = document.querySelector('.cart');
+        const dotsItem = document.querySelectorAll('.dotItem');
+        const im = document.querySelectorAll('.cart-item img');
+
+        cart.addEventListener('scroll', ()=>{
+            let index2 = Math.round(cart.scrollLeft / im[0].clientWidth);
+            dotsItem.forEach(dot => dot.classList.remove('actives'));
+            dotsItem[index2]?.classList.add('actives');
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>
