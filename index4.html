@@ -156,21 +156,6 @@
             dots[index]?.classList.add('active');
         });
 
-
-        const cart = document.querySelector('.cart');
-        const dotsItem = document.querySelectorAll('.dotItem');
-        const im = document.querySelectorAll('.cart-item img');
-
-        cart.addEventListener('scroll', ()=>{
-            let index2 = Math.round(cart.scrollLeft / im[0].clientWidth);
-            dotsItem.forEach(dot => dot.classList.remove('actives'));
-            dotsItem[index2]?.classList.add('actives');
-        });
-
-
-
-
-
     </script>
 </body>
 </html>

