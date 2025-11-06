@@ -31,12 +31,12 @@ document.getElementById("Register").addEventListener("submit", (e) => {
     .then((message) => {
       if (message.ok) {
         document.getElementById("Register").reset();
-        document
-          .getElementById("sendBtn")
-          .addEventListener("click", function () {
-            alert("Register successfully!!");
-            window.location.href = "index4.html";
+        document.getElementById("sendBtn").addEventListener("click", function() {
+          alert("Register successfully!!");
+          setTimeout(function() {
+            window.location.href="index4.html";
           }, 1000);
+        })
       } else {
         alert("Register failed!");
       }
