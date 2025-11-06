@@ -40,7 +40,7 @@
         border-radius: 10px;
     }
     .gallery img {
-        width: 80vw;
+        width: 85vw;
         flex: 0 0 auto;
         max-width: 400px;
         height: auto;
@@ -51,12 +51,13 @@
         -webkit-user-drag: none;
     }
         .container-gallery{
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        margin-top: 30px;
-    }
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 30px;
+        }
     .gallery{
+        margin-left: 15px;
         cursor: pointer;
         display: flex;
         gap: 12px;
@@ -92,6 +93,26 @@
         transition: background 0.3s;
     }
     .dot.active{
+        background: #3300ff;
+    }
+
+
+
+
+    .dotsCart{
+        text-align: center;
+        margin-top: 10px;
+    }
+    .dotCart{
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #ccc;
+        border-radius: 50%;
+        margin: 0 5px;
+        transition: background 0.3s;
+    }
+    .dotCart.activeCart{
         background: #3300ff;
     }
 
@@ -153,7 +174,7 @@
         margin-top: 5px;
     }
     body{
-        height: 150vh;
+        height: 160vh;
     }
     .btn-add a{
         text-decoration: none;
@@ -204,5 +225,69 @@
     .footer-btn.active,
     .footer-btn:hover{
         color: #007bff;
+    }
+
+
+
+    .categories{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 40px;
+    }
+    .box-cate a{
+        color: #000000;
+        text-decoration: none;
+        font-family: sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+    }
+    .box-cate i{
+        font-size: 18px;
+    }
+    .box-cate{
+        text-align: center;
+        border: none;
+        padding: 15px;
+        width: 20%;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease ;
+    }
+    .box-cate:hover{
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .main-categories p{
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-left: 15px;
+        color: gray;
+        margin-top: 30px;
+    }
+    .contact{
+        margin-top: 100px;
+        font-family: sans-serif;
+    }
+    .contact h2{
+        text-align: center;
+    }
+    .media{
+        margin-top: 30px;
+        text-align: center;
+    }
+    .media i{
+        border-radius: 50%;
+        color: #ffffff;
+        padding: 10px;
+        background-color: #000000;
+        font-size: 20px;
+
+    }
+    .media a{
+        text-decoration: none;
+        color: black;
+        margin: 10px;
     }
 }

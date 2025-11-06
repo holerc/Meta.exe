@@ -29,6 +29,8 @@
 
 
         </div>
+
+
         <div class="container-gallery">
             <div class="gallery">
                 <img src="item1.jpg" alt="">
@@ -42,6 +44,8 @@
                 <span class="dot"></span>
             </div>
         </div>
+
+
 
         <div class="box-cart">
             <p>Lamps</p>
@@ -145,9 +149,61 @@
                     </div>
                 </div>               
             </div>
-            
+                <div class="dotsCart">
+                <span class="dotCart activeCart"></span>
+                <span class="dotCart"></span>
+                <span class="dotCart"></span>
+                <span class="dotCart"></span>
+                <span class="dotCart"></span>
+                <span class="dotCart"></span>
+                <span class="dotCart"></span>
+            </div>
         </div>
+        
 
+        <div class="main-categories">
+            <p>Categories</p>
+            <div class="categories">
+                <div class="box-cate">
+                    <a href="#">
+                        <i class="ri-restaurant-line"></i>
+                        <span>Foods</span>
+                    </a>
+                </div>
+                <div class="box-cate">
+                    <a href="#">
+                        <i class="ri-drinks-line"></i>
+                        <span>Drinks</span>
+                    </a>
+                </div>
+                <div class="box-cate">
+                    <a href="#">
+                        <i class="ri-cake-3-line"></i>
+                        <span>Cakes</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <div class="media">
+                <a href="https://www.facebook.com/share/1BHFL7nbTC/?mibextid=wwXIfr">
+                    <i class="ri-facebook-circle-fill"></i>
+                    
+                </a>
+                <a href="https://t.me/Chhat800">
+                    <i class="ri-telegram-fill"></i>
+                    
+                </a>
+                <a href="https://www.tiktok.com/@richhat101?_r=1&_t=ZS-91BLsB2fRPL">
+                    <i class="ri-tiktok-fill"></i>
+                    
+                </a>
+                
+            </div>
+        </div>
 
     </div>
     
@@ -163,9 +219,6 @@
     </footer>
 
 
-
-
-
     <script>
         const gallery = document.querySelector('.gallery');
         const dots = document.querySelectorAll('.dot');
@@ -175,6 +228,17 @@
             let index = Math.round(gallery.scrollLeft / image[0].clientWidth);
             dots.forEach(dot => dot.classList.remove('active'));
             dots[index]?.classList.add('active');
+        });
+
+
+        const cart = document.querySelector('.cart');
+        const dotsCart = document.querySelectorAll('.dotCart');
+        const imageCart = document.querySelectorAll('.cart-item img');
+
+        cart.addEventListener('scroll', ()=>{
+            let index1 = Math.round(cart.scrollLeft / imageCart[0].clientWidth);
+            dotsCart.forEach(dot => dot.classList.remove('activeCart'));
+            dotsCart[index1]?.classList.add('activeCart');
         });
 
     </script>
