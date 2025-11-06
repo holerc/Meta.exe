@@ -99,4 +99,21 @@
         outline: none;
         font-size: 15px;
     }
+
+
+    .back-links a i{
+        font-size: 20px;
+        border: none;
+        padding: 6px;
+        border-radius: 5px;
+        background-color: rgb(50, 90, 247);
+        color: white;
+    }
+    .back-links{
+        margin-top: 20px;
+    }
+    .back-links a{
+        text-decoration: none;
+        font-family: sans-serif;
+    }
 }
