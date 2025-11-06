@@ -39,8 +39,9 @@ document.getElementById("Register").addEventListener("submit", async (e) => {
     if (data.ok) {
       alert("Register successfully!");
       document.getElementById("Register").reset();
-      alert("Welcome to menu!");
       window.location.href="index4.html";
+      alert("Welcome to menu!");
+      
     } else {
       alert("Failed to send data!");
     }

@@ -97,22 +97,6 @@
 
 
 
-    .dotsItem{
-        text-align: center;
-        margin-top: 10px;
-    }
-    .dotItem{
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        background: #ccc;
-        border-radius: 50%;
-        margin: 0 5px;
-        transition: background 0.3s;
-    }
-    .dotItem.actives{
-        background: #3300ff;
-    }
 
 
 
@@ -138,6 +122,7 @@
         border: none;
         border-radius: 15px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        height: 300px;
     }
     .cart{
         cursor: pointer;
@@ -165,9 +150,59 @@
     .star{
         color: gold;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 5px;
     }
     body{
         height: 150vh;
+    }
+    .btn-add a{
+        text-decoration: none;
+        color: #ffffff;
+         background-color: green;
+         padding: 10px;
+         border: none;
+         border-radius: 10px;
+         font-family: sans-serif;
+         font-weight: 600;
+         transition: all background-color 0.3s;
+    }
+    .btn-add{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .btn-add a:hover{
+        background-color: rgb(1, 105, 1);
+    }
+
+    
+    .footer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #ddd;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+    }
+
+    .footer-btn{
+        text-decoration: none;
+        color: #555;
+        text-align: center;
+        font-size: 14px;
+        flex: 1;
+        transition: .3s;
+    }
+    .footer-btn i{
+        display: block;
+        font-size: 22px;
+    }
+    .footer-btn.active,
+    .footer-btn:hover{
+        color: #007bff;
     }
 }
